@@ -1,1 +1,1 @@
-ldapsearch -Q -u "uid=z*" cn | grep ^cn | sort -r -f | cut -c5-
+ldapsearch -Q -u "uid=z*" | grep ^cn | sort -r -f | cut -c5-

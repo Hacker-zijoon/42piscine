@@ -1,0 +1,22 @@
+total 25
+drwxr-xr-x  3 jkwon  2017_april  4096 Apr  4 15:58 .
+drwxr-xr-x  5 jkwon  2017_april  4096 Apr  4 15:37 ..
+drwxr-xr-x  3 jkwon  2017_april  4096 Apr  4 15:52 12
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 15:59 f1.txt
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 15:35 file1.sh
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 15:35 file2.sh
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 15:35 file3.sh
+-rwxr-xr-x  1 jkwon  2017_april    83 Apr  4 15:31 find_sh.sh
+
+./12:
+total 24
+drwxr-xr-x  3 jkwon  2017_april  4096 Apr  4 15:52 .
+drwxr-xr-x  3 jkwon  2017_april  4096 Apr  4 15:58 ..
+drwxr-xr-x  2 jkwon  2017_april  4096 Apr  4 15:52 123
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 14:47 file4.sh
+-rw-r--r--  1 jkwon  2017_april     0 Apr  4 14:47 file5.sh
+
+./12/123:
+total 16
+drwxr-xr-x  2 jkwon  2017_april  4096 Apr  4 15:52 .
+drwxr-xr-x  3 jkwon  2017_april  4096 Apr  4 15:52 ..
