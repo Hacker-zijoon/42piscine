@@ -1,0 +1,6 @@
+Credentials cache: API:23441
+        Principal: jkwon@42.US.ORG
+
+  Issued                Expires               Principal
+Apr  3 14:27:11 2017  Apr  4 00:27:11 2017  krbtgt/42.US.ORG@42.US.ORG
+Apr  3 14:27:14 2017  Apr  4 00:27:11 2017  ldap/ldap-proxy.42.us.org@42.US.ORG
