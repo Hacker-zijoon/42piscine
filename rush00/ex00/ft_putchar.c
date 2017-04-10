@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex02.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bpierce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/08 11:45:03 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/09 11:38:27 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/08 14:58:56 by bpierce           #+#    #+#             */
+/*   Updated: 2017/04/09 13:41:55 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include "ft_iterative_power.c"
 
-int		main(void)
+int		ft_putchar(char c)
 {
-	int x = ft_iterative_power(5, 0);
-	printf("%d", x);
+	write(1, &c, 1);
 	return (0);
 }

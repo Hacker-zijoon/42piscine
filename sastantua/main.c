@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex02.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bpierce <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/08 11:45:03 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/09 11:38:27 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/08 15:22:13 by bpierce           #+#    #+#             */
+/*   Updated: 2017/04/09 17:47:11 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include "ft_iterative_power.c"
+void	sastantua(int size);
 
 int		main(void)
 {
-	int x = ft_iterative_power(5, 0);
-	printf("%d", x);
+	sastantua(1);
 	return (0);
 }
