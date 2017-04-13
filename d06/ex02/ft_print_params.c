@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 00:50:45 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/11 00:51:14 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/11 23:51:26 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/12 14:04:43 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	while (*s1 || *s2)
+	write(1, &c, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	int		i;
+	int		j;
+
+	i = 1;
+	j = 0;
+	while (i < argc)
 	{
-		if (*s1 != *s2)
+		while (argv[i][j])
 		{
-			return (*s1 - *s2);
+			ft_putchar(argv[i][j]);
+			j++;
 		}
-		++s1;
-		++s2;
+		j = 0;
+		ft_putchar('\n');
+		i++;
 	}
-	return (0);
 }

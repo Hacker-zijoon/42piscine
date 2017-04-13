@@ -17,6 +17,10 @@ void	ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		ft_putchar('-');
+		if (nb == -2147483648) {
+			ft_putchar('2');
+			return ft_putnbr(147483648);
+		}
 		nb = -nb;
 	}
 	if (nb > 9)

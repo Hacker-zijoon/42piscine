@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 09:44:54 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/08 10:39:58 by jkwon            ###   ########.fr       */
+/*   Updated: 2017/04/11 22:46:32 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb)
+int		ft_recursive_factorial(int nb)
 {
 	if (nb == 1 || nb == 0)
 		return (1);
 	else
-		return (nb) * ft_iterative_factorial(nb - 1);
+		return (nb) * ft_recursive_factorial(nb - 1);
 }

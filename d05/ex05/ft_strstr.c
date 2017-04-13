@@ -6,7 +6,7 @@
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/10 18:37:53 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/11 00:48:48 by jkwon            ###   ########.fr       */
+/*   Updated: 2017/04/12 10:02:33 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strstr(char *str, char *to_find)
 
 	i = 0;
 	j = 0;
+	if (str[i] == '\0')
+		return (0);
 	while (str[i] != '\0')
 	{
 		while ((str[i] == to_find[j]) || (to_find[j] == '\0'))

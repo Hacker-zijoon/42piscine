@@ -22,22 +22,12 @@ int		main(void)
 	int ret2;
 
 	strcpy(str1, "asdfasdh");
-	strcpy(str2, "asdfasded");
+	strcpy(str2, "asdfasdhadf");
 
 	ret = strcmp(str1, str2);
-	if(ret < 0)
-		 printf("str1 is less than str2\n");
-	else if(ret > 0)
-		 printf("str1 is greater than str2\n");
-	else
-		 printf("str1 is equal to str2\n");
+  printf("%d\n", ret);
 
 	ret2 = ft_strcmp(str1, str2);
-	if(ret2 < 0)
-		 printf("str1 is less than str2");
-	else if(ret2 > 0)
-		 printf("str1 is greater than str2");
-	else
-		 printf("str1 is equal to str2");
+  printf("%d\n", ret2);
 	return (0);
 }

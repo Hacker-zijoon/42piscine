@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 00:50:45 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/11 00:51:14 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/11 22:46:44 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/11 23:22:47 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+#include <stdio.h>
+#include <unistd.h>
+
+int		main(void)
 {
-	while (*s1 || *s2)
-	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		++s1;
-		++s2;
-	}
+	int		a;
+	int		b;
+	int		*p1;
+	int		*p2;
+		
+	a = 5;
+	b = 7;
+	p1 = &a;
+	p2 = &b;	
+
+	printf("%d %d \n", a ,b);
+	
+	ft_swap(p1,p2);
+
+	printf("%d %d\n", a , b);
+
+	ft_putchar('a');
+
 	return (0);
 }
