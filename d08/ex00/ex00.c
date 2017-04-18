@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex00.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/13 09:39:46 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 22:42:36 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_split_whitespaces.c"
+// #include "ft_split_whitespaces.c"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	int		i;
+		char str[] = "		 bksda #$asfs fdskaf    sdlafj asdf 		2		";
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+		char **result;
+    int   i = 0;
+
+    result = ft_split_whitespaces(str);
+
+    while (result[i])
+    {
+  	  printf("%s\n" , result[i]);
+      i++;
+    }
+
+		return (0);
 }

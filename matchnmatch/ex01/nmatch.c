@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   nmatch.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/16 18:41:57 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/16 18:43:23 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		nmatch(char *s1, char *s2)
 {
-	int		i;
-
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+  if (*s1 == '\0' && *s2 == '\0')
+    return(1);
+  if (*s1 == *s2 && *s1 != '*')
+    return(match(s1 + 1, s2 + 1));
+  if (*s2 == '*' && *s1 == '\0')
+    return(match(s1, s2 + 1));
+  if (*s2 == '*' && *s1 == '\0')
+    return(match(s1 + 1, s2) || match(s1, s2 + 1));
+	return(0);
 }

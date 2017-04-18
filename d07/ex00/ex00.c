@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex00.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/12 19:31:59 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/12 19:32:13 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_strdup.c"
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		main(void)
 {
-	int		i;
+		char* src = "aadfsfsdfsd";
+		char* ptr = "as";
+		char* ptr2 = "as";
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+		ptr = strdup(src);
+		printf("%s\n" , ptr);
+		ptr2 = ft_strdup(src);
+		printf("%s\n" , ptr2);
+		free(ptr2);
+		free(ptr);
+
+		return (0);
 }

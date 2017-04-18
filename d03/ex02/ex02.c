@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 #include <stdio.h>
-#include "ft_swap.c"
+#include "swp.c"
 
 /*
 void	ft_putchar(char ptr);
@@ -24,12 +24,12 @@ int		main(void)
 {
 	int		a;
 	int		b;
-	
+
 	a = 5;
 	b = 7;
-	
+
 	printf("%d %d \n", a ,b);
-	
+
 	ft_swap(&a,&b);
 
 	printf("%d %d\n", a , b);

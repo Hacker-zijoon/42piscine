@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex03.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/14 01:12:52 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 01:16:23 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
+#include "ft_abs.h"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	int		i;
-
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+	int x = ABS(-15);
+	printf("%d\n", x);
 }

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex01.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/12 20:37:49 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/13 20:56:36 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_range.c"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	int		i;
+		int *ptr2;
+    int i;
+		int min;
+		int max;
+		int diff;
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+		min = 10;
+		max = 15;
+		diff = max - min;
+		ptr2 = ft_range(min, max);
+    i = 0;
+    while (min < max)
+    {
+		  printf("%d\n", ptr2[i]);
+      i++;
+			min++;
+    }
+		return (0);
 }

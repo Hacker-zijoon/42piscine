@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_collatz_conjecture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/14 16:11:16 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 16:19:01 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+unsigned int	ft_collatz_conjecture(unsigned int base)
 {
-	int		i;
-
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+	if (base == 1)
+		return (0);
+	if (base % 2 == 0)
+		return (ft_collatz_conjecture(base / 2));
+	if (base % 2 == 1)
+		return (ft_collatz_conjecture(base * 3 + 1));
 }

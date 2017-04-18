@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/10 16:10:44 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/10 16:33:04 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+char		*ft_strcpy(char *dest, char *src)
 {
 	int		i;
 
 	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	while (src[i] != '\0')
 	{
-		ft_putchar(argv[0][i]);
+		dest[i] = src[i];
 		i++;
 	}
-	ft_putchar('\n');
-	return (0);
+	dest[i] = '\0';
+	return (dest);
 }

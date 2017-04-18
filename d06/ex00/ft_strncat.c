@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/11 19:48:07 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/11 19:48:32 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+char		*ft_strncat(char *dest, char *src, int nb)
 {
-	int		i;
+	char *tmp;
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	tmp = dest;
+	while (*dest != '\0')
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+		++dest;
 	}
-	ft_putchar('\n');
-	return (0);
+	while (*src != '\0' && nb > 0)
+	{
+		*dest = *src;
+		++dest;
+		++src;
+		nb--;
+	}
+	*dest = '\0';
+	return (tmp);
 }

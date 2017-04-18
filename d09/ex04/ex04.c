@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex04.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/14 10:26:20 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 10:29:07 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
+#include "ft_rot42.c"
 
 int		main(int argc, char **argv)
 {
-	int		i;
-
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	if (argc !=2)
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+		printf("\n");
+		return(0);
 	}
-	ft_putchar('\n');
+	char *str = ft_rot42(argv[1]);
+	printf("%s\n" , str);
 	return (0);
 }

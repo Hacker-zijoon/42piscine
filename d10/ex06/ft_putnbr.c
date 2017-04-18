@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/18 00:38:31 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/18 00:40:34 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include "do_op.h"
 
-int		main(int argc, char **argv)
+void	ft_putnbr(int nb)
 {
-	int		i;
-
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	if (nb < 0)
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+		ft_putchar('-');
+		if (nb == -2147483648)
+		{
+			ft_putchar('2');
+			ft_putnbr(147483648);
+			return ;
+		}
+		nb = -nb;
 	}
-	ft_putchar('\n');
-	return (0);
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+	}
+	ft_putchar(nb % 10 + '0');
 }

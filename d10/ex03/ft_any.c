@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/17 16:22:16 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/17 16:22:47 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		ft_any(char **tab, int (*f)(char*))
 {
 	int		i;
 
 	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	while (tab[i] != 0)
 	{
-		ft_putchar(argv[0][i]);
+		if (f(tab[i]) == 1)
+			return (1);
 		i++;
 	}
-	ft_putchar('\n');
 	return (0);
 }

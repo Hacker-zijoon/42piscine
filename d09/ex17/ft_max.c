@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/14 16:49:51 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 16:52:13 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		ft_max(int *tab, int length)
 {
 	int		i;
 
 	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	while (i != length)
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+	
 	}
-	ft_putchar('\n');
-	return (0);
 }

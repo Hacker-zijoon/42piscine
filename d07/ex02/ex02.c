@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ex02.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/12 22:04:17 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/12 22:04:19 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_ultimate_range.c"
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	int		i;
+		int* ptr2;
+    int size;
+    int i;
+		int min;
+		int max;
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
-	{
-		ft_putchar(argv[0][i]);
-		i++;
-	}
-	ft_putchar('\n');
-	return (0);
+		min = -10;
+		max = 30;
+
+    i = 0;
+		size = ft_ultimate_range(&ptr2, min, max);
+
+		while (min < max)
+		{
+			printf("%d\n", ptr2[i]);
+			i++;
+			min++;
+		}
+	 printf("This is size : %d\n" , size);
+
+		return (0);
 }

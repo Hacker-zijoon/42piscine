@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/12 22:03:38 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/12 23:21:43 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-int		main(int argc, char **argv)
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	int		i;
+	int length;
+	int i;
+	int *ptr;
 
+	length = (max - min);
 	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	if (length <= 0)
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+		*range = 0;
+		return (0);
 	}
-	ft_putchar('\n');
-	return (0);
+	else
+	{
+		ptr = (int*)malloc(sizeof(int) * length);
+		while (i != length)
+		{
+			ptr[i] = min++;
+			i++;
+		}
+		*range = ptr;
+	}
+	return (i);
 }

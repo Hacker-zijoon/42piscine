@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/17 17:48:55 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/17 17:49:36 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int		i;
+	int		inc_check;
+	int		dec_check;
 
+	inc_check = 1;
+	dec_check = 1;
 	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	while (i < length - 1)
 	{
-		ft_putchar(argv[0][i]);
+		if (f(tab[i], tab[i + 1]) > 0)
+			inc_check = 0;
 		i++;
 	}
-	ft_putchar('\n');
-	return (0);
+	i = 0;
+	while (i < length - 1)
+	{
+		if (f(tab[i], tab[i + 1]) < 0)
+			dec_check = 0;
+		i++;
+	}
+	if (inc_check == 1 || dec_check == 1)
+		return (1);
+	else
+		return (0);
 }

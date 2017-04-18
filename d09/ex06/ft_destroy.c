@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_destroy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 23:40:49 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/12 14:04:02 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/14 16:53:38 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/14 17:04:31 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
+#include "ft_ultimator.h"
 
-int		main(int argc, char **argv)
+void		ft_destroy(char ***factory)
 {
-	int		i;
+	int		a;
+	int		b;
 
-	i = 0;
-	argc = 0;
-	while (argv[0][i])
+	while (factory[a])
 	{
-		ft_putchar(argv[0][i]);
-		i++;
+		while (factory[a][b])
+		{
+			free(factory[a][b]);
+			b++;
+		}
+		free(factory[a]);
+		a++;
 	}
-	ft_putchar('\n');
-	return (0);
+	free(factory);
 }
