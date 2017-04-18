@@ -26,30 +26,30 @@ int		ft_arg3condition(char arg2, int arg3)
 	{
 		if (arg3 == 0)
 		{
-			ft_putstr("Stop : module by zero");
+			ft_putstr("Stop : modulo by zero");
 			return (1);
 		}
 	}
 	return (0);
 }
 
-void	ft_arg2condition(char *argv, int arg1, int arg3)
+void	ft_arg2condition(char *arg2, int arg1, int arg3)
 {
-	if (argv[0] == '+')
-		ft_putnbr(arg1 + arg3);
-	else if (argv[0] == '-')
-		ft_putnbr(arg1 - arg3);
-	else if (argv[0] == '*')
-		ft_putnbr(arg1 * arg3);
-	else if (argv[0] == '/')
+	if (arg2[0] == '+')
+		ft_putnbr(op_array[0](arg1, arg3));
+	else if (arg2[0] == '-')
+		ft_putnbr(op_array[1](arg1, arg3));
+	else if (arg2[0] == '*')
+		ft_putnbr(op_array[2](arg1, arg3));
+	else if (arg2[0] == '/')
 	{
-		if (ft_arg3condition(argv[0], arg3) == 0)
-			ft_putnbr(arg1 / arg3);
+		if (ft_arg3condition(arg2[0], arg3) == 0)
+			ft_putnbr(op_array[3](arg1, arg3));
 	}
-	else if (argv[0] == '%')
+	else if (arg2[0] == '%')
 	{
-		if (ft_arg3condition(argv[0], arg3) == 0)
-			ft_putnbr(arg1 % arg3);
+		if (ft_arg3condition(arg2[0], arg3) == 0)
+			ft_putnbr(op_array[4](arg1, arg3));
 	}
 	else
 		ft_putchar('0');
@@ -64,6 +64,12 @@ int		main(int argc, char **argv)
 		return (0);
 	arg1 = ft_atoi(argv[1]);
 	arg3 = ft_atoi(argv[3]);
+	op_array[0] = add;
+	op_array[1] = minus;
+	op_array[2] = multiply;
+	op_array[3] = divide;
+	op_array[4] = modulo;
+
 	ft_arg2condition(argv[2], arg1, arg3);
 	return (0);
 }

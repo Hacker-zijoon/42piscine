@@ -11,15 +11,21 @@
 # **************************************************************************** #
 
 NAME = libft.a
-SRC = srcs/ft_putchar.c \
-			srcs/ft_putstr.c \
-			srcs/ft_strcmp.c \
-			srcs/ft_strcat.c \
-			srcs/ft_strcpy.c \
-			srcs/ft_strncat.c \
-			srcs/ft_strncpy.c \
-			srcs/ft_swap.c \
-			srcs/ft_strlen.c
+
+FUNCTION = putchar \
+					 putstr \
+					 strcmp \
+					 strcat \
+					 strcpy \
+					 strncat \
+					 strncpy \
+					 swap \
+					 strlen \
+
+ADD_FT = $(addprefix ft_, $(FUNCTION))
+SRC = $(addsuffix .c, $(ADD_FT))
+OBJ = $(addsuffix .o, $(ADD_FT))
+SRC_PATH = $(addprefix ./srcs/, $(SRC))
 
 CC = gcc
 CFLAGS = -c -Wall -Wextra -Werror -I$(H_DIR)
@@ -28,16 +34,12 @@ H_DIR = includes
 all: $(NAME)
 
 $(NAME) :
-	$(CC) $(CFLAGS) $(SRC)
-	ar rc $(NAME) ft_putchar.o ft_putstr.o ft_strcmp.o \
-				ft_strcat.o ft_strcpy.o ft_strncat.o \
-				ft_strncpy.o ft_swap.o ft_strlen.o
+	$(CC) $(CFLAGS) $(SRC_PATH)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f ft_putchar.o ft_putstr.o ft_strcmp.o \
-				ft_strcat.o ft_strcpy.o ft_strncat.o \
-				ft_strncpy.o ft_swap.o ft_strlen.o
+	/bin/rm -f $(OBJ)
 
 fclean:
 	/bin/rm -f $(NAME)

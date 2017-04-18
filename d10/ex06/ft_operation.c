@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_op.h                                            :+:      :+:    :+:   */
+/*   operation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 00:41:39 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/18 00:42:14 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/18 15:08:11 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/18 15:10:09 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DO_OP_H
+#include "do_op.h"
 
-# define DO_OP_H
+int		add(int	a, int b)
+{
+	return (a + b);
+}
 
-# include <unistd.h>
+int		minus(int a, int b)
+{
+	return (a - b);
+}
 
-int		ft_atoi(char *str);
+int		multiply(int a, int b)
+{
+	return (a * b);
+}
 
-void	ft_putchar(char c);
+int		divide(int a, int b)
+{
+	return (a / b);
+}
 
-void	ft_putstr(char *str);
-
-void	ft_putnbr(int nb);
-
-int		add(int	a, int b);
-
-int		minus(int a, int b);
-
-int		multiply(int a, int b);
-
-int		divide(int a, int b);
-
-int		modulo(int a, int b);
-
-typedef int(*operation)(int, int);
-	operation op_array[5];
-#endif
+int		modulo(int a, int b)
+{
+	return (a % b);
+}

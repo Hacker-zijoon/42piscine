@@ -11,8 +11,16 @@
 # **************************************************************************** #
 
 NAME = do-op
-SRC = main.c ft_putchar.c ft_putstr.c \
- 			ft_atoi.c ft_putnbr.c
+
+FUNCTION = putchar \
+					 putstr \
+					 atoi \
+					 putnbr \
+					 operation
+
+ADD_FT = $(addprefix ft_, $(FUNCTION))
+SRC = $(addsuffix .c, $(ADD_FT)) main.c
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 OBJS = ${SRC:.c=.o}
