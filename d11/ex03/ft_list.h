@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 00:38:31 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/19 09:09:24 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/18 17:14:53 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/18 22:17:05 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "do_op.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
+# include <stdlib.h>
 
-void	ft_putnbr(int nb)
-{
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		if (nb == -2147483648)
-		{
-			ft_putchar('2');
-			ft_putnbr(147483648);
-			return ;
-		}
-		nb = -nb;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putchar(nb % 10 + '0');
-	ft_putchar('\n');
-}
+typedef struct s_list	t_list;
+
+struct		s_list {
+	t_list	*next;
+	void	*data;
+};
+
+#endif

@@ -20,10 +20,10 @@ FUNCTION = putchar \
 
 ADD_FT = $(addprefix ft_, $(FUNCTION))
 SRC = $(addsuffix .c, $(ADD_FT)) main.c
+OBJS = ${SRC:.c=.o}
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-OBJS = ${SRC:.c=.o}
 MAKEFLAGS += --silent
 
 all: $(NAME)
@@ -32,8 +32,7 @@ $(NAME) :	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	/bin/rm -f ft_putchar.o ft_putstr.o \
-			ft_atoi.o ft_putnbr.o main.o
+	/bin/rm -f $(OBJS)
 
 fclean:
 	/bin/rm -f $(NAME)

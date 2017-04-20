@@ -6,9 +6,11 @@
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/17 16:11:18 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/17 16:11:48 by jkwon            ###   ########.fr       */
+/*   Updated: 2017/04/19 09:06:36 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int		*ft_map(int *tab, int length, int (*f)(int))
 {

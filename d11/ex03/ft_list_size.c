@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 00:38:31 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/19 09:09:24 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/18 23:04:08 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/18 23:04:37 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "do_op.h"
+#include "ft_list.h"
 
-void	ft_putnbr(int nb)
+int		ft_list_size(t_list *begin_list)
 {
-	if (nb < 0)
+	int		element;
+
+	element = 0;
+	while (begin_list != NULL)
 	{
-		ft_putchar('-');
-		if (nb == -2147483648)
-		{
-			ft_putchar('2');
-			ft_putnbr(147483648);
-			return ;
-		}
-		nb = -nb;
+		begin_list = begin_list->next;
+		element++;
 	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putchar(nb % 10 + '0');
-	ft_putchar('\n');
+	return (element);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 00:38:31 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/19 09:09:24 by jkwon            ###   ########.fr       */
+/*   Created: 2017/04/18 17:14:18 by jkwon             #+#    #+#             */
+/*   Updated: 2017/04/19 14:54:40 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "do_op.h"
+#include "ft_list.h"
 
-void	ft_putnbr(int nb)
+void	ft_list_push_back(t_list **begin_list, void *data)
 {
-	if (nb < 0)
+	t_list *new;
+
+	new = *begin_list;
+	if (new)
 	{
-		ft_putchar('-');
-		if (nb == -2147483648)
+		while (new->next != NULL)
 		{
-			ft_putchar('2');
-			ft_putnbr(147483648);
-			return ;
+			new = new->next;
 		}
-		nb = -nb;
+		new->next = ft_create_elem(data);
 	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-	}
-	ft_putchar(nb % 10 + '0');
-	ft_putchar('\n');
+	else
+		*begin_list = ft_create_elem(data);
 }

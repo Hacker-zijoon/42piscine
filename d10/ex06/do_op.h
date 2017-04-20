@@ -6,7 +6,7 @@
 /*   By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 00:41:39 by jkwon             #+#    #+#             */
-/*   Updated: 2017/04/18 00:42:14 by jkwon            ###   ########.fr       */
+/*   Updated: 2017/04/18 16:19:03 by jkwon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int		divide(int a, int b);
 
 int		modulo(int a, int b);
 
-typedef int(*operation)(int, int);
-	operation op_array[5];
+typedef	int		(*t_opr)(int, int);
+
 #endif

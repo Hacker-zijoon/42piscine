@@ -6,21 +6,21 @@
 #    By: jkwon <jkwon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/17 10:52:29 by jkwon             #+#    #+#              #
-#    Updated: 2017/04/17 14:17:18 by jkwon            ###   ########.fr        #
+#    Updated: 2017/04/18 21:37:07 by jkwon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FUNCTION = putchar \
-					 putstr \
-					 strcmp \
-					 strcat \
-					 strcpy \
-					 strncat \
-					 strncpy \
-					 swap \
-					 strlen \
+		 putstr \
+		 strcmp \
+		 strcat \
+		 strcpy \
+		 strncat \
+		 strncpy \
+		 swap \
+		 strlen \
 
 ADD_FT = $(addprefix ft_, $(FUNCTION))
 SRC = $(addsuffix .c, $(ADD_FT))
