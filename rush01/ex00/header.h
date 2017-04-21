@@ -41,4 +41,6 @@ int		check_input(int argc, char **argv);
 int		main(int argc, char **argv);
 
 int		empty(int **puzzle, int row, int column);
+
+int		empty2(int **puzzle, int row, int column);
 #endif
